@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://7ia7d1yvonfw"]
+
+[ext_resource type="Script" path="res://Main/main.gd" id="1_yxci5"]
+[ext_resource type="Script" path="res://MainTools/World Manager/World Root/world_root.gd" id="2_fgs56"]
+[ext_resource type="Script" path="res://MainTools/Save Manager/save_manager.gd" id="2_xpqux"]
+[ext_resource type="Script" path="res://Configuration/config.gd" id="2_y5m4k"]
+[ext_resource type="Script" path="res://MainTools/World Manager/world_manager.gd" id="4_d2wy2"]
+[ext_resource type="PackedScene" uid="uid://c62ypfdfp8sbm" path="res://MapLayout/Main Menu/main_menu.tscn" id="6_r2pod"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_yxci5")
+
+[node name="Utilities" type="Node" parent="."]
+
+[node name="Config" type="Node" parent="Utilities"]
+unique_name_in_owner = true
+script = ExtResource("2_y5m4k")
+
+[node name="SaveManager" type="Node" parent="Utilities"]
+unique_name_in_owner = true
+script = ExtResource("2_xpqux")
+
+[node name="WorldManager" type="Node" parent="Utilities"]
+unique_name_in_owner = true
+script = ExtResource("4_d2wy2")
+
+[node name="WorldRoot" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_fgs56")
+
+[node name="MainMenu" parent="WorldRoot" instance=ExtResource("6_r2pod")]
+visible = false

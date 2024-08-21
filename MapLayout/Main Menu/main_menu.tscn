@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c62ypfdfp8sbm"]
+
+[ext_resource type="Script" path="res://MapLayout/Main Menu/main_menu.gd" id="1_k8eer"]
+[ext_resource type="Texture2D" uid="uid://dcurdplns7v7x" path="res://Assets/bath-abbey.jpg" id="2_nhb34"]
+[ext_resource type="Script" path="res://MapLayout/Main Menu/background.gd" id="3_liodg"]
+
+[node name="MainMenu" type="Node2D"]
+visible = false
+script = ExtResource("1_k8eer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="Container" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Container"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/Container/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Container/MarginContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="CanvasLayer/Control/Container/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Settings" type="Button" parent="CanvasLayer/Control/Container/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control/Container/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_nhb34")
+script = ExtResource("3_liodg")
